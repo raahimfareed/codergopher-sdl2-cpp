@@ -1,0 +1,85 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // {
+        //     "label": "Debug",
+        //     "type": "shell",
+        //     "command": "g++ -c src/*.cpp -std=c++14 -m64 -g -Wall -I include && g++ *.o -o bin/debug/main -lSDL2main -lSDL2 -lSDL2_image && ./bin/debug/main"
+        // },
+        {
+            "type": "cppbuild",
+            "label": "SDL2 Codergopher Debug",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-c",
+                "src/*.cpp",
+                "-std=c++14",
+                "-m64",
+                "-g",
+                "-Wall",
+                "-I",
+                "include",
+                "&&",
+                "g++",
+                "*.o",
+                "-o",
+                "bin/debug/main",
+                "-lSDL2main",
+                "-lSDL2",
+                "-lSDL2_image",
+                "&&",
+                "./bin/debug/main",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
+        },
+        {
+            "type": "cppbuild",
+            "label": "SDL2 Codergopher Release",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-c",
+                "src/*.cpp",
+                "-std=c++14",
+                "-m64",
+                "-O",
+                "-Wall",
+                "-I",
+                "include",
+                "&&",
+                "g++",
+                "*.o",
+                "-o",
+                "bin/release/main",
+                "-s",
+                "-lSDL2main",
+                "-lSDL2",
+                "-lSDL2_image",
+                "&&",
+                "./bin/release/main",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
+        }
+    ]
+}
